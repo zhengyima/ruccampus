@@ -1,0 +1,1132 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <title>test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="v">
+    <meta name="author" content="BDAI">
+
+    <link href="./analyze_files/jquery-ui.css" rel="stylesheet">
+    <link href="./analyze_files/bootstrap.min.css" rel="stylesheet">
+    <link href="./analyze_files/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="./analyze_files/font-awesome.min.css" rel="stylesheet">
+    <link href="./analyze_files/site.css" rel="stylesheet">
+    <script src="./analyze_files/jquery-1.10.2.min.js"></script>
+    <script src="./analyze_files/jquery-ui.min.js"></script>
+    <script src="./analyze_files/ie-emulation-modes-warning.js"></script>
+    <script src="./analyze_files/base.js"></script>
+    <script src="./analyze_files/home.js"></script>
+    <script src="./analyze_files/config_rucstudent.js"></script>
+    <script src="./analyze_files/echarts.min.js"></script>
+    <script src="./analyze_files/require.js"></script>
+    <script src="./analyze_files/jquery.lazyload.min.js" type="text/javascript"></script>
+    <script src="./analyze_files/datacommon.js"></script>
+    <link href="./analyze_files/bs-callout.css" rel="stylesheet">
+    <script type="text/javascript" src="./analyze_files/api"></script>
+    <script type="text/javascript" src="./analyze_files/getscript"></script>
+    <script type="text/javascript" src="./analyze_files/Heatmap_min.js"></script>
+    <script data-require-id="echarts/chart/bar" src="./analyze_files/bar.js" async=""></script>
+    <script data-require-id="echarts/chart/line" src="./analyze_files/line.js" async=""></script>
+    <script data-require-id="echarts/chart/pie" src="./analyze_files/pie.js" async=""></script>
+    <script data-require-id="echarts/chart/force" src="./analyze_files/force.js" async=""></script>
+    <script data-require-id="echarts/chart/chord" src="./analyze_files/chord.js" async=""></script>
+    <script data-require-id="echarts/chart/map" src="./analyze_files/map.js" async=""></script>
+    <script data-require-id="echarts/chart/wordCloud" src="./analyze_files/wordCloud.js" async=""></script>
+    <script src="./analyze_files/ie10-viewport-bug-workaround.js"></script>
+    <script src="./analyze_files/bootstrap.min.js"></script>
+
+</head>
+<body>
+<h1>学院名:<span id="school_name"></span></h1>
+<div class="container-fluid">
+<div id="ad_1">
+    <div class="panel-heading">
+        <h4>教师迁移</h4>
+        <div class="col-lg-3 col-sm-3">
+        <h5>迁移比例</h5>
+        <select id="select1_1">
+            <option value=0>全部迁移至通州校区</option>
+            <option value=0.1>0.1</option>
+            <option value=0.2>0.2</option>
+            <option value=0.3>0.3</option>
+            <option value=0.4>0.4</option>
+            <option value=0.5>0.5</option>
+            <option value=0.6>0.6</option>
+            <option value=0.7>0.7</option>
+            <option value=0.8>0.8</option>
+            <option value=0.9>0.9</option>            
+            <option value=1>全部留在中关村校区</option>
+        </select>
+        </div>
+
+        <div class="col-lg-3 col-sm-3">
+        <h5>楼宇</h5>
+        <select id="select1_2">
+            <option value="小球馆、游泳馆">小球馆、游泳馆</option>
+            <option value="北区学生宿舍三期">北区学生宿舍三期</option>
+            <option value="图书馆">图书馆</option>
+            <option value="北区学生宿舍一期">北区学生宿舍一期</option>
+            <option value="北区学生宿舍二期及食堂">北区学生宿舍二期及食堂</option>
+            <option value="北区学部楼一期">北区学部楼一期</option>
+            <option value="学生事务中心">学生事务中心</option>
+            <option value="公共教学楼二期">公共教学楼二期</option>
+            <option value="北区学部楼二期">北区学部楼二期</option>
+            <option value="东区学生宿舍一期">东区学生宿舍一期</option>
+            <option value="中心食堂">中心食堂</option>
+            <option value="东区学部及公共实验中心">东区学部及公共实验中心</option>
+            <option value="东区学生宿舍二期">东区学生宿舍二期</option>
+            <option value="中青年教师宿舍">中青年教师宿舍</option>
+            <option value="荣誉堂">荣誉堂</option>
+            <option value="公共教学楼一期">公共教学楼一期</option>
+            <option value="南区学部楼一期">南区学部楼一期</option>
+            <option value="西区食堂">西区食堂</option>
+            <option value="西区学部楼一期">西区学部楼一期</option>
+            <option value="社会与人口学院楼">社会与人口学院楼</option>
+            <option value="西区学部楼二期">西区学部楼二期</option>
+            <option value="实验楼及留学生宿舍">实验楼及留学生宿舍</option>
+            <option value="行政服务中心">行政服务中心</option>
+            <option value="学术报告中心">学术报告中心</option>
+            <option value="音乐厅">音乐厅</option>
+            <option value="综合体育馆">综合体育馆</option>
+            <option value="校园运行中心">校园运行中心</option>
+            <option value="校医院">校医院</option>
+        </select>
+        </div>
+
+        <div class="col-lg-3 col-sm-3">
+        <h5>使用类别</h5>
+        <select id="select1_3">
+            <option value="学生宿舍">学生宿舍</option>
+            <option value="学生食堂">学生食堂</option>
+            <option value="图书馆">图书馆</option>
+            <option value="校医院">校医院</option>
+            <option value="公共教室">公共教室</option>
+            <option value="预留">预留</option>
+            <option value="管理服务单位办公用房">管理服务单位办公用房</option>
+            <option value="会堂">会堂</option>
+            <option value="教学科研单位办公用房">教学科研单位办公用房</option>
+            <option value="公共实验用房">公共实验用房</option>
+            <option value="体育馆">体育馆</option>
+            <option value="教师公寓">教师公寓</option>
+            <option value="学生活动用房">学生活动用房</option>
+            <option value="后勤附属用房">后勤附属用房</option>
+            <option value="文化科技园">文化科技园</option>
+            <option value="地下车库">地下车库</option>
+            <option value="地下库房">地下库房</option>
+        </select>
+        </div>
+        
+        <div class="col-lg-3 col-sm-3">
+        <button id="adjust_1" class="btn labButton">确定调整</button>
+        </div>
+    </div>
+</div>
+<hr \>
+<div id="ad_2">
+    <div class="panel-heading">
+        <h4>行政教辅迁移</h4>
+        <div class="col-lg-3 col-sm-3">
+        <h5>迁移比例</h5>
+        <select id="select2_1">
+            <option value=0>全部迁移至通州校区</option>
+            <option value=0.1>0.1</option>
+            <option value=0.2>0.2</option>
+            <option value=0.3>0.3</option>
+            <option value=0.4>0.4</option>
+            <option value=0.5>0.5</option>
+            <option value=0.6>0.6</option>
+            <option value=0.7>0.7</option>
+            <option value=0.8>0.8</option>
+            <option value=0.9>0.9</option>            
+            <option value=1>全部留在中关村校区</option>
+        </select>
+        </div>
+
+        <div class="col-lg-3 col-sm-3">
+        <h5>楼宇</h5>
+        <select id="select2_2">
+            <option value="小球馆、游泳馆">小球馆、游泳馆</option>
+            <option value="北区学生宿舍三期">北区学生宿舍三期</option>
+            <option value="图书馆">图书馆</option>
+            <option value="北区学生宿舍一期">北区学生宿舍一期</option>
+            <option value="北区学生宿舍二期及食堂">北区学生宿舍二期及食堂</option>
+            <option value="北区学部楼一期">北区学部楼一期</option>
+            <option value="学生事务中心">学生事务中心</option>
+            <option value="公共教学楼二期">公共教学楼二期</option>
+            <option value="北区学部楼二期">北区学部楼二期</option>
+            <option value="东区学生宿舍一期">东区学生宿舍一期</option>
+            <option value="中心食堂">中心食堂</option>
+            <option value="东区学部及公共实验中心">东区学部及公共实验中心</option>
+            <option value="东区学生宿舍二期">东区学生宿舍二期</option>
+            <option value="中青年教师宿舍">中青年教师宿舍</option>
+            <option value="荣誉堂">荣誉堂</option>
+            <option value="公共教学楼一期">公共教学楼一期</option>
+            <option value="南区学部楼一期">南区学部楼一期</option>
+            <option value="西区食堂">西区食堂</option>
+            <option value="西区学部楼一期">西区学部楼一期</option>
+            <option value="社会与人口学院楼">社会与人口学院楼</option>
+            <option value="西区学部楼二期">西区学部楼二期</option>
+            <option value="实验楼及留学生宿舍">实验楼及留学生宿舍</option>
+            <option value="行政服务中心">行政服务中心</option>
+            <option value="学术报告中心">学术报告中心</option>
+            <option value="音乐厅">音乐厅</option>
+            <option value="综合体育馆">综合体育馆</option>
+            <option value="校园运行中心">校园运行中心</option>
+            <option value="校医院">校医院</option>
+        </select>
+        </div>
+
+        <div class="col-lg-3 col-sm-3">
+        <h5>使用类别</h5>
+        <select id="select2_3">
+            <option value="学生宿舍">学生宿舍</option>
+            <option value="学生食堂">学生食堂</option>
+            <option value="图书馆">图书馆</option>
+            <option value="校医院">校医院</option>
+            <option value="公共教室">公共教室</option>
+            <option value="预留">预留</option>
+            <option value="管理服务单位办公用房">管理服务单位办公用房</option>
+            <option value="会堂">会堂</option>
+            <option value="教学科研单位办公用房">教学科研单位办公用房</option>
+            <option value="公共实验用房">公共实验用房</option>
+            <option value="体育馆">体育馆</option>
+            <option value="教师公寓">教师公寓</option>
+            <option value="学生活动用房">学生活动用房</option>
+            <option value="后勤附属用房">后勤附属用房</option>
+            <option value="文化科技园">文化科技园</option>
+            <option value="地下车库">地下车库</option>
+            <option value="地下库房">地下库房</option>
+        </select>
+        </div>
+        
+        <div class="col-lg-3 col-sm-3">
+        <button id="adjust_2" class="btn labButton">确定调整</button>
+        </div>
+    </div>
+</div>
+<hr \>
+<div id="ad_3">
+    <div class="panel-heading">
+        <h4>辅助公共用房迁移</h4>
+        <div class="col-lg-3 col-sm-3">
+        <h5>迁移比例</h5>
+        <select id="select3_1">
+            <option value=0>全部迁移至通州校区</option>
+            <option value=0.1>0.1</option>
+            <option value=0.2>0.2</option>
+            <option value=0.3>0.3</option>
+            <option value=0.4>0.4</option>
+            <option value=0.5>0.5</option>
+            <option value=0.6>0.6</option>
+            <option value=0.7>0.7</option>
+            <option value=0.8>0.8</option>
+            <option value=0.9>0.9</option>            
+            <option value=1>全部留在中关村校区</option>
+        </select>
+        </div>
+
+        <div class="col-lg-3 col-sm-3">
+        <h5>楼宇</h5>
+        <select id="select3_2">
+            <option value="小球馆、游泳馆">小球馆、游泳馆</option>
+            <option value="北区学生宿舍三期">北区学生宿舍三期</option>
+            <option value="图书馆">图书馆</option>
+            <option value="北区学生宿舍一期">北区学生宿舍一期</option>
+            <option value="北区学生宿舍二期及食堂">北区学生宿舍二期及食堂</option>
+            <option value="北区学部楼一期">北区学部楼一期</option>
+            <option value="学生事务中心">学生事务中心</option>
+            <option value="公共教学楼二期">公共教学楼二期</option>
+            <option value="北区学部楼二期">北区学部楼二期</option>
+            <option value="东区学生宿舍一期">东区学生宿舍一期</option>
+            <option value="中心食堂">中心食堂</option>
+            <option value="东区学部及公共实验中心">东区学部及公共实验中心</option>
+            <option value="东区学生宿舍二期">东区学生宿舍二期</option>
+            <option value="中青年教师宿舍">中青年教师宿舍</option>
+            <option value="荣誉堂">荣誉堂</option>
+            <option value="公共教学楼一期">公共教学楼一期</option>
+            <option value="南区学部楼一期">南区学部楼一期</option>
+            <option value="西区食堂">西区食堂</option>
+            <option value="西区学部楼一期">西区学部楼一期</option>
+            <option value="社会与人口学院楼">社会与人口学院楼</option>
+            <option value="西区学部楼二期">西区学部楼二期</option>
+            <option value="实验楼及留学生宿舍">实验楼及留学生宿舍</option>
+            <option value="行政服务中心">行政服务中心</option>
+            <option value="学术报告中心">学术报告中心</option>
+            <option value="音乐厅">音乐厅</option>
+            <option value="综合体育馆">综合体育馆</option>
+            <option value="校园运行中心">校园运行中心</option>
+            <option value="校医院">校医院</option>
+        </select>
+        </div>
+
+        <div class="col-lg-3 col-sm-3">
+        <h5>使用类别</h5>
+        <select id="select3_3">
+            <option value="学生宿舍">学生宿舍</option>
+            <option value="学生食堂">学生食堂</option>
+            <option value="图书馆">图书馆</option>
+            <option value="校医院">校医院</option>
+            <option value="公共教室">公共教室</option>
+            <option value="预留">预留</option>
+            <option value="管理服务单位办公用房">管理服务单位办公用房</option>
+            <option value="会堂">会堂</option>
+            <option value="教学科研单位办公用房">教学科研单位办公用房</option>
+            <option value="公共实验用房">公共实验用房</option>
+            <option value="体育馆">体育馆</option>
+            <option value="教师公寓">教师公寓</option>
+            <option value="学生活动用房">学生活动用房</option>
+            <option value="后勤附属用房">后勤附属用房</option>
+            <option value="文化科技园">文化科技园</option>
+            <option value="地下车库">地下车库</option>
+            <option value="地下库房">地下库房</option>
+        </select>
+        </div>
+        
+        <div class="col-lg-3 col-sm-3">
+        <button id="adjust_3" class="btn labButton">确定调整</button>
+        </div>
+    </div>
+</div>
+<hr \>
+<div id="ad_4">
+    <div class="panel-heading">
+        <h4>学生公共用房迁移</h4>
+        <div class="col-lg-3 col-sm-3">
+        <h5>迁移比例</h5>
+        <select id="select4_1">
+            <option value=0>全部迁移至通州校区</option>
+            <option value=0.1>0.1</option>
+            <option value=0.2>0.2</option>
+            <option value=0.3>0.3</option>
+            <option value=0.4>0.4</option>
+            <option value=0.5>0.5</option>
+            <option value=0.6>0.6</option>
+            <option value=0.7>0.7</option>
+            <option value=0.8>0.8</option>
+            <option value=0.9>0.9</option>            
+            <option value=1>全部留在中关村校区</option>
+        </select>
+        </div>
+
+        <div class="col-lg-3 col-sm-3">
+        <h5>楼宇</h5>
+        <select id="select4_2">
+            <option value="小球馆、游泳馆">小球馆、游泳馆</option>
+            <option value="北区学生宿舍三期">北区学生宿舍三期</option>
+            <option value="图书馆">图书馆</option>
+            <option value="北区学生宿舍一期">北区学生宿舍一期</option>
+            <option value="北区学生宿舍二期及食堂">北区学生宿舍二期及食堂</option>
+            <option value="北区学部楼一期">北区学部楼一期</option>
+            <option value="学生事务中心">学生事务中心</option>
+            <option value="公共教学楼二期">公共教学楼二期</option>
+            <option value="北区学部楼二期">北区学部楼二期</option>
+            <option value="东区学生宿舍一期">东区学生宿舍一期</option>
+            <option value="中心食堂">中心食堂</option>
+            <option value="东区学部及公共实验中心">东区学部及公共实验中心</option>
+            <option value="东区学生宿舍二期">东区学生宿舍二期</option>
+            <option value="中青年教师宿舍">中青年教师宿舍</option>
+            <option value="荣誉堂">荣誉堂</option>
+            <option value="公共教学楼一期">公共教学楼一期</option>
+            <option value="南区学部楼一期">南区学部楼一期</option>
+            <option value="西区食堂">西区食堂</option>
+            <option value="西区学部楼一期">西区学部楼一期</option>
+            <option value="社会与人口学院楼">社会与人口学院楼</option>
+            <option value="西区学部楼二期">西区学部楼二期</option>
+            <option value="实验楼及留学生宿舍">实验楼及留学生宿舍</option>
+            <option value="行政服务中心">行政服务中心</option>
+            <option value="学术报告中心">学术报告中心</option>
+            <option value="音乐厅">音乐厅</option>
+            <option value="综合体育馆">综合体育馆</option>
+            <option value="校园运行中心">校园运行中心</option>
+            <option value="校医院">校医院</option>
+        </select>
+        </div>
+
+        <div class="col-lg-3 col-sm-3">
+        <h5>使用类别</h5>
+        <select id="select4_3">
+            <option value="学生宿舍">学生宿舍</option>
+            <option value="学生食堂">学生食堂</option>
+            <option value="图书馆">图书馆</option>
+            <option value="校医院">校医院</option>
+            <option value="公共教室">公共教室</option>
+            <option value="预留">预留</option>
+            <option value="管理服务单位办公用房">管理服务单位办公用房</option>
+            <option value="会堂">会堂</option>
+            <option value="教学科研单位办公用房">教学科研单位办公用房</option>
+            <option value="公共实验用房">公共实验用房</option>
+            <option value="体育馆">体育馆</option>
+            <option value="教师公寓">教师公寓</option>
+            <option value="学生活动用房">学生活动用房</option>
+            <option value="后勤附属用房">后勤附属用房</option>
+            <option value="文化科技园">文化科技园</option>
+            <option value="地下车库">地下车库</option>
+            <option value="地下库房">地下库房</option>
+        </select>
+        </div>
+        
+        <div class="col-lg-3 col-sm-3">
+        <button id="adjust_4" class="btn labButton">确定调整</button>
+        </div>
+    </div>
+</div>
+<hr \>
+<div id="ad_5">
+    <div class="panel-heading">
+        <h4>学生科研用房迁移</h4>
+        <div class="col-lg-3 col-sm-3">
+        <h5>迁移比例</h5>
+        <select id="select5_1">
+            <option value=0>全部迁移至通州校区</option>
+            <option value=0.1>0.1</option>
+            <option value=0.2>0.2</option>
+            <option value=0.3>0.3</option>
+            <option value=0.4>0.4</option>
+            <option value=0.5>0.5</option>
+            <option value=0.6>0.6</option>
+            <option value=0.7>0.7</option>
+            <option value=0.8>0.8</option>
+            <option value=0.9>0.9</option>            
+            <option value=1>全部留在中关村校区</option>
+        </select>
+        </div>
+
+        <div class="col-lg-3 col-sm-3">
+        <h5>楼宇</h5>
+        <select id="select5_2">
+            <option value="小球馆、游泳馆">小球馆、游泳馆</option>
+            <option value="北区学生宿舍三期">北区学生宿舍三期</option>
+            <option value="图书馆">图书馆</option>
+            <option value="北区学生宿舍一期">北区学生宿舍一期</option>
+            <option value="北区学生宿舍二期及食堂">北区学生宿舍二期及食堂</option>
+            <option value="北区学部楼一期">北区学部楼一期</option>
+            <option value="学生事务中心">学生事务中心</option>
+            <option value="公共教学楼二期">公共教学楼二期</option>
+            <option value="北区学部楼二期">北区学部楼二期</option>
+            <option value="东区学生宿舍一期">东区学生宿舍一期</option>
+            <option value="中心食堂">中心食堂</option>
+            <option value="东区学部及公共实验中心">东区学部及公共实验中心</option>
+            <option value="东区学生宿舍二期">东区学生宿舍二期</option>
+            <option value="中青年教师宿舍">中青年教师宿舍</option>
+            <option value="荣誉堂">荣誉堂</option>
+            <option value="公共教学楼一期">公共教学楼一期</option>
+            <option value="南区学部楼一期">南区学部楼一期</option>
+            <option value="西区食堂">西区食堂</option>
+            <option value="西区学部楼一期">西区学部楼一期</option>
+            <option value="社会与人口学院楼">社会与人口学院楼</option>
+            <option value="西区学部楼二期">西区学部楼二期</option>
+            <option value="实验楼及留学生宿舍">实验楼及留学生宿舍</option>
+            <option value="行政服务中心">行政服务中心</option>
+            <option value="学术报告中心">学术报告中心</option>
+            <option value="音乐厅">音乐厅</option>
+            <option value="综合体育馆">综合体育馆</option>
+            <option value="校园运行中心">校园运行中心</option>
+            <option value="校医院">校医院</option>
+        </select>
+        </div>
+
+        <div class="col-lg-3 col-sm-3">
+        <h5>使用类别</h5>
+        <select id="select5_3">
+            <option value="学生宿舍">学生宿舍</option>
+            <option value="学生食堂">学生食堂</option>
+            <option value="图书馆">图书馆</option>
+            <option value="校医院">校医院</option>
+            <option value="公共教室">公共教室</option>
+            <option value="预留">预留</option>
+            <option value="管理服务单位办公用房">管理服务单位办公用房</option>
+            <option value="会堂">会堂</option>
+            <option value="教学科研单位办公用房">教学科研单位办公用房</option>
+            <option value="公共实验用房">公共实验用房</option>
+            <option value="体育馆">体育馆</option>
+            <option value="教师公寓">教师公寓</option>
+            <option value="学生活动用房">学生活动用房</option>
+            <option value="后勤附属用房">后勤附属用房</option>
+            <option value="文化科技园">文化科技园</option>
+            <option value="地下车库">地下车库</option>
+            <option value="地下库房">地下库房</option>
+        </select>
+        </div>
+        
+        <div class="col-lg-3 col-sm-3">
+        <button id="adjust_5" class="btn labButton">确定调整</button>
+        </div>
+    </div>
+</div>
+<hr \>
+<div id="ad_6">
+    <div class="panel-heading">
+        <h4>补贴用房迁移</h4>
+        <div class="col-lg-3 col-sm-3">
+        <h5>迁移比例</h5>
+        <select id="select6_1">
+            <option value=0>全部迁移至通州校区</option>
+            <option value=0.1>0.1</option>
+            <option value=0.2>0.2</option>
+            <option value=0.3>0.3</option>
+            <option value=0.4>0.4</option>
+            <option value=0.5>0.5</option>
+            <option value=0.6>0.6</option>
+            <option value=0.7>0.7</option>
+            <option value=0.8>0.8</option>
+            <option value=0.9>0.9</option>            
+            <option value=1>全部留在中关村校区</option>
+        </select>
+        </div>
+
+        <div class="col-lg-3 col-sm-3">
+        <h5>楼宇</h5>
+        <select id="select6_2">
+            <option value="小球馆、游泳馆">小球馆、游泳馆</option>
+            <option value="北区学生宿舍三期">北区学生宿舍三期</option>
+            <option value="图书馆">图书馆</option>
+            <option value="北区学生宿舍一期">北区学生宿舍一期</option>
+            <option value="北区学生宿舍二期及食堂">北区学生宿舍二期及食堂</option>
+            <option value="北区学部楼一期">北区学部楼一期</option>
+            <option value="学生事务中心">学生事务中心</option>
+            <option value="公共教学楼二期">公共教学楼二期</option>
+            <option value="北区学部楼二期">北区学部楼二期</option>
+            <option value="东区学生宿舍一期">东区学生宿舍一期</option>
+            <option value="中心食堂">中心食堂</option>
+            <option value="东区学部及公共实验中心">东区学部及公共实验中心</option>
+            <option value="东区学生宿舍二期">东区学生宿舍二期</option>
+            <option value="中青年教师宿舍">中青年教师宿舍</option>
+            <option value="荣誉堂">荣誉堂</option>
+            <option value="公共教学楼一期">公共教学楼一期</option>
+            <option value="南区学部楼一期">南区学部楼一期</option>
+            <option value="西区食堂">西区食堂</option>
+            <option value="西区学部楼一期">西区学部楼一期</option>
+            <option value="社会与人口学院楼">社会与人口学院楼</option>
+            <option value="西区学部楼二期">西区学部楼二期</option>
+            <option value="实验楼及留学生宿舍">实验楼及留学生宿舍</option>
+            <option value="行政服务中心">行政服务中心</option>
+            <option value="学术报告中心">学术报告中心</option>
+            <option value="音乐厅">音乐厅</option>
+            <option value="综合体育馆">综合体育馆</option>
+            <option value="校园运行中心">校园运行中心</option>
+            <option value="校医院">校医院</option>
+        </select>
+        </div>
+
+        <div class="col-lg-3 col-sm-3">
+        <h5>使用类别</h5>
+        <select id="select6_3">
+            <option value="学生宿舍">学生宿舍</option>
+            <option value="学生食堂">学生食堂</option>
+            <option value="图书馆">图书馆</option>
+            <option value="校医院">校医院</option>
+            <option value="公共教室">公共教室</option>
+            <option value="预留">预留</option>
+            <option value="管理服务单位办公用房">管理服务单位办公用房</option>
+            <option value="会堂">会堂</option>
+            <option value="教学科研单位办公用房">教学科研单位办公用房</option>
+            <option value="公共实验用房">公共实验用房</option>
+            <option value="体育馆">体育馆</option>
+            <option value="教师公寓">教师公寓</option>
+            <option value="学生活动用房">学生活动用房</option>
+            <option value="后勤附属用房">后勤附属用房</option>
+            <option value="文化科技园">文化科技园</option>
+            <option value="地下车库">地下车库</option>
+            <option value="地下库房">地下库房</option>
+        </select>
+        </div>
+        
+        <div class="col-lg-3 col-sm-3">
+        <button id="adjust_6" class="btn labButton">确定调整</button>
+        </div>
+    </div>
+</div>
+<hr \>
+<div id="ad_7">
+    <div class="panel-heading">
+        <h4>资料室迁移</h4>
+        <div class="col-lg-3 col-sm-3">
+        <h5>迁移比例</h5>
+        <select id="select7_1">
+            <option value=0>全部迁移至通州校区</option>
+            <option value=0.1>0.1</option>
+            <option value=0.2>0.2</option>
+            <option value=0.3>0.3</option>
+            <option value=0.4>0.4</option>
+            <option value=0.5>0.5</option>
+            <option value=0.6>0.6</option>
+            <option value=0.7>0.7</option>
+            <option value=0.8>0.8</option>
+            <option value=0.9>0.9</option>            
+            <option value=1>全部留在中关村校区</option>
+        </select>
+        </div>
+
+        <div class="col-lg-3 col-sm-3">
+        <h5>楼宇</h5>
+        <select id="select7_2">
+            <option value="小球馆、游泳馆">小球馆、游泳馆</option>
+            <option value="北区学生宿舍三期">北区学生宿舍三期</option>
+            <option value="图书馆">图书馆</option>
+            <option value="北区学生宿舍一期">北区学生宿舍一期</option>
+            <option value="北区学生宿舍二期及食堂">北区学生宿舍二期及食堂</option>
+            <option value="北区学部楼一期">北区学部楼一期</option>
+            <option value="学生事务中心">学生事务中心</option>
+            <option value="公共教学楼二期">公共教学楼二期</option>
+            <option value="北区学部楼二期">北区学部楼二期</option>
+            <option value="东区学生宿舍一期">东区学生宿舍一期</option>
+            <option value="中心食堂">中心食堂</option>
+            <option value="东区学部及公共实验中心">东区学部及公共实验中心</option>
+            <option value="东区学生宿舍二期">东区学生宿舍二期</option>
+            <option value="中青年教师宿舍">中青年教师宿舍</option>
+            <option value="荣誉堂">荣誉堂</option>
+            <option value="公共教学楼一期">公共教学楼一期</option>
+            <option value="南区学部楼一期">南区学部楼一期</option>
+            <option value="西区食堂">西区食堂</option>
+            <option value="西区学部楼一期">西区学部楼一期</option>
+            <option value="社会与人口学院楼">社会与人口学院楼</option>
+            <option value="西区学部楼二期">西区学部楼二期</option>
+            <option value="实验楼及留学生宿舍">实验楼及留学生宿舍</option>
+            <option value="行政服务中心">行政服务中心</option>
+            <option value="学术报告中心">学术报告中心</option>
+            <option value="音乐厅">音乐厅</option>
+            <option value="综合体育馆">综合体育馆</option>
+            <option value="校园运行中心">校园运行中心</option>
+            <option value="校医院">校医院</option>
+        </select>
+        </div>
+
+        <div class="col-lg-3 col-sm-3">
+        <h5>使用类别</h5>
+        <select id="select7_3">
+            <option value="学生宿舍">学生宿舍</option>
+            <option value="学生食堂">学生食堂</option>
+            <option value="图书馆">图书馆</option>
+            <option value="校医院">校医院</option>
+            <option value="公共教室">公共教室</option>
+            <option value="预留">预留</option>
+            <option value="管理服务单位办公用房">管理服务单位办公用房</option>
+            <option value="会堂">会堂</option>
+            <option value="教学科研单位办公用房">教学科研单位办公用房</option>
+            <option value="公共实验用房">公共实验用房</option>
+            <option value="体育馆">体育馆</option>
+            <option value="教师公寓">教师公寓</option>
+            <option value="学生活动用房">学生活动用房</option>
+            <option value="后勤附属用房">后勤附属用房</option>
+            <option value="文化科技园">文化科技园</option>
+            <option value="地下车库">地下车库</option>
+            <option value="地下库房">地下库房</option>
+        </select>
+        </div>
+        
+        <div class="col-lg-3 col-sm-3">
+        <button id="adjust_7" class="btn labButton">确定调整</button>
+        </div>
+    </div>
+</div>
+<hr \>
+<div id="ad_8">
+    <div class="panel-heading">
+        <h4>实验室迁移</h4>
+        <div class="col-lg-3 col-sm-3">
+        <h5>迁移比例</h5>
+        <select id="select8_1">
+            <option value=0>全部迁移至通州校区</option>
+            <option value=0.1>0.1</option>
+            <option value=0.2>0.2</option>
+            <option value=0.3>0.3</option>
+            <option value=0.4>0.4</option>
+            <option value=0.5>0.5</option>
+            <option value=0.6>0.6</option>
+            <option value=0.7>0.7</option>
+            <option value=0.8>0.8</option>
+            <option value=0.9>0.9</option>            
+            <option value=1>全部留在中关村校区</option>
+        </select>
+        </div>
+
+        <div class="col-lg-3 col-sm-3">
+        <h5>楼宇</h5>
+        <select id="select8_2">
+            <option value="小球馆、游泳馆">小球馆、游泳馆</option>
+            <option value="北区学生宿舍三期">北区学生宿舍三期</option>
+            <option value="图书馆">图书馆</option>
+            <option value="北区学生宿舍一期">北区学生宿舍一期</option>
+            <option value="北区学生宿舍二期及食堂">北区学生宿舍二期及食堂</option>
+            <option value="北区学部楼一期">北区学部楼一期</option>
+            <option value="学生事务中心">学生事务中心</option>
+            <option value="公共教学楼二期">公共教学楼二期</option>
+            <option value="北区学部楼二期">北区学部楼二期</option>
+            <option value="东区学生宿舍一期">东区学生宿舍一期</option>
+            <option value="中心食堂">中心食堂</option>
+            <option value="东区学部及公共实验中心">东区学部及公共实验中心</option>
+            <option value="东区学生宿舍二期">东区学生宿舍二期</option>
+            <option value="中青年教师宿舍">中青年教师宿舍</option>
+            <option value="荣誉堂">荣誉堂</option>
+            <option value="公共教学楼一期">公共教学楼一期</option>
+            <option value="南区学部楼一期">南区学部楼一期</option>
+            <option value="西区食堂">西区食堂</option>
+            <option value="西区学部楼一期">西区学部楼一期</option>
+            <option value="社会与人口学院楼">社会与人口学院楼</option>
+            <option value="西区学部楼二期">西区学部楼二期</option>
+            <option value="实验楼及留学生宿舍">实验楼及留学生宿舍</option>
+            <option value="行政服务中心">行政服务中心</option>
+            <option value="学术报告中心">学术报告中心</option>
+            <option value="音乐厅">音乐厅</option>
+            <option value="综合体育馆">综合体育馆</option>
+            <option value="校园运行中心">校园运行中心</option>
+            <option value="校医院">校医院</option>
+        </select>
+        </div>
+
+        <div class="col-lg-3 col-sm-3">
+        <h5>使用类别</h5>
+        <select id="select8_3">
+            <option value="学生宿舍">学生宿舍</option>
+            <option value="学生食堂">学生食堂</option>
+            <option value="图书馆">图书馆</option>
+            <option value="校医院">校医院</option>
+            <option value="公共教室">公共教室</option>
+            <option value="预留">预留</option>
+            <option value="管理服务单位办公用房">管理服务单位办公用房</option>
+            <option value="会堂">会堂</option>
+            <option value="教学科研单位办公用房">教学科研单位办公用房</option>
+            <option value="公共实验用房">公共实验用房</option>
+            <option value="体育馆">体育馆</option>
+            <option value="教师公寓">教师公寓</option>
+            <option value="学生活动用房">学生活动用房</option>
+            <option value="后勤附属用房">后勤附属用房</option>
+            <option value="文化科技园">文化科技园</option>
+            <option value="地下车库">地下车库</option>
+            <option value="地下库房">地下库房</option>
+        </select>
+        </div>
+        
+        <div class="col-lg-3 col-sm-3">
+        <button id="adjust_8" class="btn labButton">确定调整</button>
+        </div>
+    </div>
+</div>
+<div>
+<div id="chart1" style="width: 600px;height:400px;"></div>
+<!-- 旧校区 -->
+<div id="chart2" style="width: 600px;height:400px"></div>
+<!-- 新校区 -->
+</div>
+</div>
+<script>
+
+var school_name;
+var school_no
+
+function GetURLParameter(sParam) {
+    var sPageURL = window.location.search.substring(1);
+
+    var sURLVariables = sPageURL.split('&');
+    for (var i = 0; i < sURLVariables.length; i++) {
+        var sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam) {
+            var cvalue = decodeURIComponent(sParameterName[1])
+            return cvalue;
+        }
+    }
+    return null;
+}
+
+
+
+$("#adjust_1").click(function () {
+    var rate_1 = $("#select1_1").val();
+    var nb_1 = $("#select1_2").val();
+    var nt_1 = $("#select1_3").val();
+    $.ajax({
+        type: "post",
+        url: url,
+        data: {
+            "school_no" : school_no,
+            "type_id": 1,
+            "rate": rate_1,
+            "nb": nb_1,
+            "nt": nt_1
+        },
+        dataType: "json",
+        success: function() {
+            loadcharts();
+        },
+        error: function() {
+
+        }
+    })
+})
+
+$("#adjust_2").click(function () {
+    var rate_2 = $("#select2_1").val();
+    var nb_2 = $("#select2_2").val();
+    var nt_2 = $("#select2_3").val();
+    $.ajax({
+        type: "post",
+        url: url,
+        data: {
+            "school_no" : school_no,
+            "type_id": 2,
+            "rate": rate_2,
+            "nb": nb_2,
+            "nt": nt_2
+        },
+        dataType: "json",
+        success: function() {
+            loadcharts();
+        },
+        error: function() {
+
+        }
+    })
+})
+
+$("#adjust_3").click(function () {
+    var rate_3 = $("#select3_1").val();
+    var nb_3 = $("#select3_2").val();
+    var nt_3 = $("#select3_3").val();
+    $.ajax({
+        type: "post",
+        url: url,
+        data: {
+            "school_no" : school_no,
+            "type_id": 3,
+            "rate": rate_3,
+            "nb": nb_3,
+            "nt": nt_3
+        },
+        dataType: "json",
+        success: function() {
+            loadcharts();
+        },
+        error: function() {
+
+        }
+    })
+})
+
+$("#adjust_4").click(function () {
+    var rate_4 = $("#select4_1").val();
+    var nb_4 = $("#select4_2").val();
+    var nt_4 = $("#select4_3").val();
+    $.ajax({
+        type: "post",
+        url: url,
+        data: {
+            "school_no" : school_no,
+            "type_id": 4,
+            "rate": rate_4,
+            "nb": nb_4,
+            "nt": nt_4
+        },
+        dataType: "json",
+        success: function() {
+            loadcharts();
+        },
+        error: function() {
+
+        }
+    })
+})
+
+$("#adjust_5").click(function () {
+    var rate_5 = $("#select5_1").val();
+    var nb_5 = $("#select5_2").val();
+    var nt_5 = $("#select5_3").val();
+    $.ajax({
+        type: "post",
+        url: url,
+        data: {
+            "school_no" : school_no,
+            "type_id": 5,
+            "rate": rate_5,
+            "nb": nb_5,
+            "nt": nt_5
+        },
+        dataType: "json",
+        success: function() {
+            loadcharts();
+        },
+        error: function() {
+
+        }
+    })
+})
+
+$("#adjust_6").click(function () {
+    var rate_6 = $("#select6_1").val();
+    var nb_6 = $("#select6_2").val();
+    var nt_6 = $("#select6_3").val();
+    $.ajax({
+        type: "post",
+        url: url,
+        data: {
+            "school_no" : school_no,
+            "type_id": 6,
+            "rate": rate_6,
+            "nb": nb_6,
+            "nt": nt_6
+        },
+        dataType: "json",
+        success: function() {
+            loadcharts();
+        },
+        error: function() {
+
+        }
+    })
+})
+
+$("#adjust_7").click(function () {
+    var rate_7 = $("#select7_1").val();
+    var nb_7 = $("#select7_2").val();
+    var nt_7 = $("#select7_3").val();
+    $.ajax({
+        type: "post",
+        url: url,
+        data: {
+            "school_no" : school_no,
+            "type_id": 7,
+            "rate": rate_7,
+            "nb": nb_7,
+            "nt": nt_7
+        },
+        dataType: "json",
+        success: function() {
+            loadcharts();
+        },
+        error: function() {
+
+        }
+    })
+})
+
+$("#adjust_8").click(function () {
+    var rate_8 = $("#select8_1").val();
+    var nb_8 = $("#select8_2").val();
+    var nt_8 = $("#select8_3").val();
+    $.ajax({
+        type: "post",
+        url: url,
+        data: {
+            "school_no" : school_no,
+            "type_id": 8,
+            "rate": rate_8,
+            "nb": nb_8,
+            "nt": nt_8
+        },
+        dataType: "json",
+        success: function() {
+            loadcharts();
+        },
+        error: function() {
+
+        }
+    })
+})
+
+
+function create_duidie_chart(divid, option) {
+    var myChart = echarts.init(document.getElementById(divid));
+    myChart.setOption(option);
+}
+
+function genChart(data) {
+    var option1 = {
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {          
+                type: 'shadow'
+            }
+        },
+        legend: {
+            data: ['占用面积', '预留工位面积', '空闲面积', '其他学院/校部机关面积','总体面积']
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis: {
+            type: 'value'
+        },
+        yAxis: {
+            type: 'category',
+            data: data['d']["old"]["buildings"]
+        },
+        series: [
+            {
+                name: '占用面积',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    show: true,
+                    position: 'insideRight'
+                },
+                data: data['d']["old"]["occupied_area"]
+            },
+            {
+                name: '预留工位面积',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    show: true,
+                    position: 'insideRight'
+                },
+                data: data['d']["old"]["reserved_area"]
+            },
+            {
+                name: '空闲面积',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    show: true,
+                    position: 'insideRight'
+                },
+                data: data['d']["old"]["free_area"]
+            },
+            {
+                name: '其他学院/校部机关面积',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    show: true,
+                    position: 'insideRight'
+                },
+                data: data['d']["old"]["other_area"]
+            },
+            {
+                name: '总体面积',
+                type: 'bar',
+                data: data['d']["old"]["total_area"]
+            }
+        ]
+    };
+    
+    var option2 = {
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {          
+                type: 'shadow'
+            }
+        },
+        legend: {
+            data: ['占用面积', '预留工位面积', '空闲面积', '其他学院/校部机关面积','总体面积']
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis: {
+            type: 'value'
+        },
+        yAxis: {
+            type: 'category',
+            data: data['d']["new"]["buildings"]
+        },
+        series: [
+            {
+                name: '占用面积',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    show: true,
+                    position: 'insideRight'
+                },
+                data: data['d']["new"]["occupied_area"]
+            },
+            {
+                name: '预留工位面积',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    show: true,
+                    position: 'insideRight'
+                },
+                data: data['d']["new"]["reserved_area"]
+            },
+            {
+                name: '空闲面积',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    show: true,
+                    position: 'insideRight'
+                },
+                data: data['d']["new"]["free_area"]
+            },
+            {
+                name: '其他学院/校部机关面积',
+                type: 'bar',
+                stack: '总量',
+                label: {
+                    show: true,
+                    position: 'insideRight'
+                },
+                data: data['d']["new"]["other_area"]
+            },
+            {
+                name: '总体面积',
+                type: 'bar',
+                data: data['d']["new"]["total_area"]
+            }
+        ]
+    };
+
+    create_duidie_chart("chart1", option1)
+    create_duidie_chart("chart2", option2)
+}
+
+
+function createChart() {
+    //url = "www.baidu.com"
+    $.ajax({
+        type: "get",
+        url: url,
+        data : {
+            "school_no":school_no
+        },
+        dataType: "json",
+        success: function(data) {
+            genChart(data);
+        }
+    })
+}
+
+function loadCharts() {
+    $("#chart1").empty();
+    $("#chart2").empty();
+    $("#chart3").empty();
+    createChart();
+}
+
+
+$(document).ready(function () {
+    school_no = GetURLParameter("school_no");
+    if(school_no == null)
+    {
+        alert("请添加页面参数")
+        return
+    }
+
+    // $.ajax({
+    //     url: "/AnnualReport.svc/GetHouseInfo",
+    //     type: "get",
+    //     data: {
+    //         "schoolId": school_no
+    //     },
+    //     success: function (data) {
+    //         console.log(data)
+    //         school_name = data['d']['schoolname']
+    //         $("#school").html(data['d']['schoolname'])
+    //     }
+    // });
+
+    loadCharts();
+})
+
+
+</script>
+</body>
+</html>
