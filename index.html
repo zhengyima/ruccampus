@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>疫情期间中国人民大学学生情况分析</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=10400, initial-scale=1.0, maximum-scale=3.0, minimum-scale=0.1, user-scalable=yes, target-densitydpi=device-dpi">
+    <meta name="description" content="A Search Service in Renmin University of China, Built by Prof. Zhicheng Dou">
+    <meta name="author" content="Zhicheng Dou">
+    <link href="./analyze_files/jquery-ui.css" rel="stylesheet">
+    <link href="./analyze_files/bootstrap.min.css" rel="stylesheet">
+    <link href="./analyze_files/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="./analyze_files/font-awesome.min.css" rel="stylesheet">
+    <link href="./analyze_files/site.css" rel="stylesheet">
+
+    <script src="./analyze_files/jquery-1.10.2.min.js"></script>
+    <script src="./analyze_files/jquery-ui.min.js"></script>
+    <script src="./analyze_files/ie-emulation-modes-warning.js"></script>
+
+    <script src="./analyze_files/base.js"></script>
+    <script src="./analyze_files/home.js"></script>
+    <script src="./analyze_files/config_rucstudent.js"></script>
+
+
+    <script src="./analyze_files/echarts.min.js"></script>
+    <script src="./analyze_files/require.js"></script>
+
+    <script src="./analyze_files/jquery.lazyload.min.js" type="text/javascript"></script>
+
+
+
+    <script src="./analyze_files/datacommon.js"></script>
+
+
+    <!-- <script src="./analyze_files/search_rucstudent.js"></script> -->
+    <link href="./analyze_files/bs-callout.css" rel="stylesheet">
+
+    <script type="text/javascript" src="./analyze_files/api"></script>
+    <script type="text/javascript" src="./analyze_files/getscript"></script>
+    <script type="text/javascript" src="./analyze_files/Heatmap_min.js"></script>
+
+
+    <script data-require-id="echarts/chart/bar" src="./analyze_files/bar.js" async=""></script>
+    <script data-require-id="echarts/chart/line" src="./analyze_files/line.js" async=""></script>
+    <script data-require-id="echarts/chart/pie" src="./analyze_files/pie.js" async=""></script>
+    <script data-require-id="echarts/chart/force" src="./analyze_files/force.js" async=""></script>
+    <script data-require-id="echarts/chart/chord" src="./analyze_files/chord.js" async=""></script>
+    <script data-require-id="echarts/chart/map" src="./analyze_files/map.js" async=""></script>
+    <script data-require-id="echarts/chart/wordCloud" src="./analyze_files/wordCloud.js" async=""></script>
+    <script src="./analyze_files/ie10-viewport-bug-workaround.js"></script>
+    <script src="./analyze_files/bootstrap.min.js"></script>
+
+</head>
+
+<body role="document" style="text-align: center;">
+
+    <h1>楼名:<span id="housename"></span></h1>
+    <div id="chart1" style="width: 600px;height:400px;"></div>
+    <div id="chart2" style="width: 600px;height:400px"></div>
+
+    <script type="text/javascript">
+
+        // 用于echart建图，无脑准备ID和option建图即可
+        function create_chart(divid, option) {
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById(divid));
+
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+        }
+
+        // 解析页面参数
+        function GetURLParameter(sParam) {
+            var sPageURL = window.location.search.substring(1);
+
+            var sURLVariables = sPageURL.split('&');
+            for (var i = 0; i < sURLVariables.length; i++) {
+                var sParameterName = sURLVariables[i].split('=');
+                if (sParameterName[0] == sParam) {
+                    var cvalue = decodeURIComponent(sParameterName[1])
+                    return cvalue;
+                }
+            }
+            return null;
+        }
+
+        // 第一个图，每行是school的
+        function gen_duidie_rowbyschool(data)
+        {
+            myseries = []
+            for(i = 0; i < data['d']['qianyi_school_types'].length; i++){
+                myseries.push({
+                    name: data['d']['qianyi_school_types'][i],
+                    type: 'bar',
+                    stack: '总量',
+                    label:{
+                        show:true, 
+                        position: 'insideRight'
+                    },
+                    data: data['d']['matrixs'][i]
+                })
+            }
+
+            var option1 = {
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                        type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                    }
+                },
+                legend: {
+                    data: data['d']['qianyi_school_types']
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis: {
+                    type: 'value'
+                },
+                yAxis: {
+                    type: 'category',
+                    data: data['d']['schools']
+                },
+                series: myseries
+            };
+            console.log(option1)
+
+            create_chart("chart1", option1)
+        }
+
+        // 第二个图，每一行是type的
+        function gen_duidie_rowbytype(data)
+        {
+            myseries = []
+            for(i = 0; i < data['d']['schools2'].length; i++){
+                myseries.push({
+                    name: data['d']['schools2'][i],
+                    type: 'bar',
+                    stack: '总量',
+                    label:{
+                        show:true, 
+                        position: 'insideRight'
+                    },
+                    data: data['d']['matrixs2'][i]
+                })
+            }
+
+            var option1 = {
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                        type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                    }
+                },
+                legend: {
+                    data: data['d']['schools2']
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis: {
+                    type: 'value'
+                },
+                yAxis: {
+                    type: 'category',
+                    data: data['d']['qianyi_school_types2']
+                },
+                series: myseries
+            };
+            console.log(option1)
+
+            create_chart("chart2", option1)
+        }
+
+        $(document).ready(function () {
+            hno = GetURLParameter("hno")
+            console.log(hno)
+            if(hno == null)
+            {
+                alert("请添加hno页面参数")
+                return
+            }
+
+            $.ajax({
+                url: "/AnnualReport.svc/GetHouseInfo",
+                type: "get",
+                data: {
+                    "houseId": hno
+                },
+                success: function (data) {
+                    console.log(data)
+                    $("#housename").html(data['d']['houseName'])
+                    gen_duidie_rowbyschool(data)
+                    gen_duidie_rowbytype(data)
+                }
+            });
+
+            
+
+        })
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>
